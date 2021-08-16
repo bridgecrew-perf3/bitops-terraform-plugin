@@ -27,6 +27,7 @@ function install_terraform() {
         echo ${TERRAFORM_DOWNLOAD_URL}
         curl -LO ${TERRAFORM_DOWNLOAD_URL} && unzip terraform_${version}_linux_amd64.zip -d ./
         mv terraform /usr/local/bin/terraform-${version}
+        ln -s /usr/local/bin/terraform-${version} /usr/local/bin/terraform
         chmod +x /usr/local/bin/terraform-${version}
     done <<< "$TERRAFORM_VERSIONS"
 }
