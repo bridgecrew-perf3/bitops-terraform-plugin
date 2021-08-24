@@ -2,6 +2,8 @@
 # No set -e here because we want to get a non-zero exit code from terraform_plan.sh
 set -e
 
+echo "Running Terraform Plugin deployment script..."
+
 # terraform vars
 export TERRAFORM_ROOT="$ENVROOT/terraform" 
 export TERRAFORM_BITOPS_CONFIG="$TERRAFORM_ROOT/bitops.config.yaml" 
@@ -32,6 +34,9 @@ $SCRIPTS_DIR/terraform/copy_defaults.sh "$TERRAFORM_ROOT"
 
 echo "cd Terraform Root: $TERRAFORM_ROOT"
 cd $TERRAFORM_ROOT
+
+echo "Listing contents of Terraform Root: $TERRAFORM_ROOT"
+ls -ltr $TERRAFORM_ROOT
 
 # cloud provider auth
 echo "Terraform auth cloud provider"
