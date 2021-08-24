@@ -33,6 +33,9 @@ $SCRIPTS_DIR/terraform/copy_defaults.sh "$TERRAFORM_ROOT"
 echo "cd Terraform Root: $TERRAFORM_ROOT"
 cd $TERRAFORM_ROOT
 
+echo "Listing contents of Terraform Root: $TERRAFORM_ROOT"
+ls -ltr $TERRAFORM_ROOT
+
 # cloud provider auth
 echo "Terraform auth cloud provider"
 bash $SCRIPTS_DIR/aws/sts.get-caller-identity.sh
