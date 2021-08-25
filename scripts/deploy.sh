@@ -37,8 +37,8 @@ echo "Listing contents of Terraform Root: $TERRAFORM_ROOT"
 ls -ltr $TERRAFORM_ROOT
 
 # cloud provider auth
-echo "Terraform auth cloud provider"
-bash $SCRIPTS_DIR/aws/sts.get-caller-identity.sh
+#echo "Terraform auth cloud provider"
+#bash $SCRIPTS_DIR/aws/sts.get-caller-identity.sh
 
 # Set terraform version
 echo "Using terraform version $TERRAFORM_VERSION"
