@@ -42,7 +42,13 @@ bash $SCRIPTS_DIR/aws/sts.get-caller-identity.sh
 
 # Set terraform version
 echo "Using terraform version $TERRAFORM_VERSION"
-ln -s /usr/local/bin/terraform-$TERRAFORM_VERSION /usr/local/bin/terraform
+#ln -s /usr/local/bin/terraform-$TERRAFORM_VERSION /usr/local/bin/terraform
+
+echo "Debug SCRIPTS_DIR"
+echo "$SCRIPTS_DIR"
+
+echo "List $SCRIPTS_DIR"
+ls -ltr $SCRIPTS_DIR/*
 
 # always init first
 echo "Running terraform init"
