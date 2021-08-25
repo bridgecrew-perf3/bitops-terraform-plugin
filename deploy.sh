@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # No set -e here because we want to get a non-zero exit code from terraform_plan.sh
-set -e
+set -ex
 
 echo "Running Terraform Plugin deployment script..."
 
