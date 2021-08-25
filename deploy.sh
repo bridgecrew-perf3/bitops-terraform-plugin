@@ -44,11 +44,11 @@ bash $SCRIPTS_DIR/aws/sts.get-caller-identity.sh
 
 # Set terraform version
 echo "Using terraform version $TERRAFORM_VERSION"
-ln -s /usr/local/bin/terraform-$TERRAFORM_VERSION /usr/local/bin/terraform
+#ln -s /usr/local/bin/terraform-$TERRAFORM_VERSION /usr/local/bin/terraform
 
 # always init first
 echo "Running terraform init"
-terraform init -input=false
+terraform init -input=false || /usr/local/bin/terraform-$TERRAFORM_VERSION init -input=false
 
 
 if [ -n "$TERRAFORM_WORKSPACE" ]; then
