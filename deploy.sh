@@ -9,14 +9,17 @@ export TERRAFORM_ROOT="$ENVROOT/terraform"
 export TERRAFORM_BITOPS_CONFIG="$TERRAFORM_ROOT/bitops.config.yaml" 
 export BITOPS_SCHEMA_ENV_FILE="$TERRAFORM_ROOT/ENV_FILE"
 export BITOPS_CONFIG_SCHEMA="$SCRIPTS_DIR/terraform/bitops.schema.yaml"
-
+export TERRAFORM_COMMAND=""
 
 if [ ! -d "$TERRAFORM_ROOT" ]; then
   echo "No terraform directory.  Skipping."
   exit 0
 else
   printf "Deploying terraform... ${NC}"
+  TERRAFORM_COMMAND=$(shyaml get-value terraform.options.command < $TERRAFORM_ROOT/bitops.config.yaml)
 fi
+
+echo "TERRAFORM_COMMAND: $TERRAFORM_COMMAND"
 
 # Check for Before Deploy Scripts
 bash $SCRIPTS_DIR/deploy/before-deploy.sh "$TERRAFORM_ROOT"
