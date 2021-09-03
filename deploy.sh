@@ -39,7 +39,7 @@ echo "cd Terraform Root: $TERRAFORM_ROOT"
 cd $TERRAFORM_ROOT
 
 echo "Listing contents of Terraform Root: $TERRAFORM_ROOT"
-ls -ltr $TERRAFORM_ROOT
+
 
 # cloud provider auth
 echo "Terraform auth cloud provider"
